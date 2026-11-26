@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visi & Misi | Stephen Perse Cambridge</title>
+
+  <!-- Bootstrap 5.3.7 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #062d43;
+      --navy-dark: #04263a;
+      --blue: #075080;
+      --gold: #bd8a2e;
+      --gold-light: #f0d38c;
+      --cream: #f8f8f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #17354b;
+      background: white;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* =========================================
+       NAVBAR GLOBAL
+    ========================================= */
+
+    .spc-navbar {
+      --spc-navy: #10293b;
+      --spc-navy-dark: #0b2030;
+      --spc-gold: #dfc89a;
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+      min-height: 72px;
+      padding: 0;
+      background: var(--spc-navy);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+
+    .spc-navbar.scrolled {
+      background: var(--spc-navy-dark);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .22);
+    }
+
+    .spc-navbar .container {
+      min-height: 72px;
+      max-width: 1440px;
+    }
+
+    .spc-navbar .spc-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-right: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .spc-crest {
+      display: grid;
+      width: 42px;
+      height: 46px;
+      flex-shrink: 0;
+      place-items: center;
+      border: 2px solid #fff;
+      color: #fff;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      line-height: 1;
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .spc-brand:hover .spc-crest {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    .spc-brand-text strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .spc-brand-text small {
+      display: block;
+      margin-top: 4px;
+      color: var(--spc-gold);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+
+    .spc-navbar .navbar-nav { gap: 2px; }
+    .spc-navbar .nav-item { position: relative; }
+
+    .spc-navbar .nav-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 27px 12px 25px !important;
+      color: rgba(255, 255, 255, .9) !important;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .25s ease;
+    }
+
+    .spc-navbar .nav-link::after {
+      position: absolute;
+      right: 12px;
+      bottom: 13px;
+      left: 12px;
+      height: 2px;
+      background: var(--spc-gold);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .3s ease;
+    }
+
+    .spc-navbar .nav-link:hover::after,
+    .spc-navbar .nav-link.active::after,
+    .spc-navbar .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .spc-navbar .nav-link:hover,
+    .spc-navbar .nav-link.active {
+      color: var(--spc-gold) !important;
+    }
+
+    .spc-navbar .spc-arrow {
+      font-size: 10px;
+      transition: transform .25s ease;
+    }
+
+    .spc-navbar .dropdown-toggle[aria-expanded="true"] .spc-arrow {
+      transform: rotate(180deg);
+    }
+
+    .spc-navbar .dropdown-menu {
+      min-width: 215px;
+      margin-top: 0;
+      padding: 8px;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    }
+
+    .spc-navbar .dropdown-item {
+      padding: 11px 13px;
+      border-radius: 3px;
+      color: var(--spc-navy);
+      font-size: 12px;
+      transition: background .2s ease, padding-left .2s ease;
+    }
+
+    .spc-navbar .dropdown-item:hover,
+    .spc-navbar .dropdown-item.active {
+      padding-left: 19px;
+      background: #f5eedb;
+      color: var(--spc-navy);
+    }
+
+    .spc-register {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      flex-shrink: 0;
+      margin-left: 18px;
+      padding: 11px 17px;
+      border: 1px solid var(--spc-gold);
+      border-radius: 5px;
+      background: var(--spc-gold);
+      color: var(--spc-navy-dark);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .spc-register:hover {
+      transform: translateY(-2px);
+      background: #f0dcb4;
+      color: var(--spc-navy-dark);
+    }
+
+    .spc-navbar .spc-toggler {
+      border-color: rgba(255, 255, 255, .5);
+      box-shadow: none;
+    }
+
+    .spc-navbar .spc-toggler:focus {
+      box-shadow: 0 0 0 3px rgba(223, 200, 154, .2);
+    }
+
+    .spc-navbar .spc-toggler .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    /* ================= HERO (KEN BURNS + PARALLAX) ================= */
+
+    .hero {
+      height: 315px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: var(--navy);
+    }
+
+    /* Layer LUAR untuk parallax */
+    .hero-parallax {
+      position: absolute;
+      inset: -15% 0;
+      height: 130%;
+      z-index: 1;
+      will-change: transform;
+      transform: translateY(0);
+    }
+
+    /* Layer DALAM untuk Ken Burns */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/King%27s%20College%20Chapel%2C%20Cambridge.jpg")
+        center 45% / cover no-repeat;
+      animation: kenburns 22s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes kenburns {
+      0%   { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.18) translate(-2%, -1.5%); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(2,34,49,.92),
+        rgba(3,39,56,.64) 40%,
+        rgba(3,39,56,.05) 85%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-content {
+      will-change: transform, opacity;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow::after {
+      content: "";
+      width: 62px;
+      height: 1px;
+      background: var(--gold-light);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1.06;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.55;
+      max-width: 440px;
+      margin: 0;
+    }
+
+    /* ================= SECTION VISI ================= */
+
+    .vision-intro {
+      padding: 29px 0 38px;
+      background: var(--cream);
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #b57b1c;
+      margin-bottom: 7px;
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .section-label::after {
+      content: "";
+      height: 1px;
+      width: 61px;
+      background: #c99843;
+    }
+
+    .section-title {
+      font-size: clamp(27px, 3vw, 34px);
+      line-height: 1.12;
+      color: var(--blue);
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #4280ad;
+      margin-bottom: 14px;
+    }
+
+    .gold-button {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      background: #b9842d;
+      color: white;
+      border-radius: 25px;
+      padding: 9px 21px;
+      text-decoration: none;
+      font-size: 12px;
+      transition: .25s;
+    }
+
+    .gold-button:hover {
+      background: #8c5d17;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(189, 138, 46, .35);
+    }
+
+    /* Image wrap dengan hover effect */
+
+    .image-wrap {
+      position: relative;
+      padding: 10px 0 0 10px;
+    }
+
+    .image-wrap::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 76px;
+      height: 40px;
+      border-top: 1px solid #d5a04a;
+      border-left: 1px solid #d5a04a;
+    }
+
+    .campus-img {
+      width: 100%;
+      height: 284px;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      transition: transform .5s ease, box-shadow .5s ease;
+      will-change: transform;
+    }
+
+    .campus-img:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(20,39,52,.22);
+    }
+
+    .quote-card {
+      position: absolute;
+      right: -15px;
+      bottom: -24px;
+      width: 200px;
+      padding: 16px 18px;
+      background: white;
+      box-shadow: 0 6px 20px #1d33421b;
+      border-radius: 3px;
+      z-index: 2;
+      transition: transform .4s ease, box-shadow .4s ease;
+      will-change: transform;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(20,39,52,.18);
+    }
+
+    .quote-mark {
+      font-family: Georgia, serif;
+      color: #c39238;
+      font-size: 32px;
+      line-height: .8;
+    }
+
+    .quote-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      line-height: 1.3;
+      font-style: italic;
+      color: var(--blue);
+      margin: 6px 0 10px;
+    }
+
+    .quote-author {
+      font-size: 8px;
+      color: var(--blue);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* ================= SECTION MISI ================= */
+
+    .mission-section {
+      padding: 14px 0 25px;
+      background: var(--cream);
+      border-top: 1px solid #eeeee7;
+    }
+
+    .mission-photo {
+      width: 100%;
+      height: 228px;
+      object-fit: cover;
+      border-radius: 3px;
+      margin-top: 10px;
+      transition: transform .5s ease, box-shadow .5s ease;
+      will-change: transform;
+    }
+
+    .mission-photo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(20,39,52,.22);
+    }
+
+    .mission-list {
+      border-left: 1px solid #d7dcd9;
+      padding-left: 25px;
+    }
+
+    .mission-item {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      margin: 10px 0 23px;
+      transition: transform .4s ease;
+    }
+
+    .mission-item:hover {
+      transform: translateX(6px);
+    }
+
+    .mission-icon {
+      flex: 0 0 66px;
+      width: 66px;
+      height: 66px;
+      border: 1px solid #c18b2e;
+      color: #bd8423;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      transition: transform .4s ease, background .4s ease, color .4s ease;
+    }
+
+    .mission-item:hover .mission-icon {
+      background: #bd8423;
+      color: #fff;
+      transform: scale(1.1) rotate(8deg);
+    }
+
+    .mission-item h3 {
+      font-size: 15px;
+      color: var(--blue);
+      margin: 0 0 4px;
+      transition: color .3s ease;
+    }
+
+    .mission-item:hover h3 {
+      color: #b17b1e;
+    }
+
+    .mission-item p {
+      font-size: 12px;
+      line-height: 1.55;
+      color: #5284a6;
+      margin: 0;
+    }
+
+    /* ================= QUOTE BANNER (KEN BURNS + PARALLAX) ================= */
+
+    .quote-banner {
+      min-height: 150px;
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .banner-parallax {
+      position: absolute;
+      inset: -15% 0;
+      height: 130%;
+      z-index: 0;
+      will-change: transform;
+      transform: translateY(0);
+    }
+
+    .quote-banner-bg {
+      position: absolute;
+      inset: 0 0 0 38%;
+      background:
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/King%27s%20College%2C%20Cambridge.jpg")
+        center / cover no-repeat;
+      animation: kenburns 24s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .quote-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        #042b41 0%,
+        #042b41 38%,
+        rgba(4,43,65,.45) 65%,
+        rgba(4,43,65,.1)
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .banner-quote {
+      position: relative;
+      z-index: 2;
+      border-left: 2px solid #c18b2e;
+      padding-left: 16px;
+      max-width: 420px;
+      will-change: transform;
+    }
+
+    .banner-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      line-height: 1.3;
+      margin: 0 0 5px;
+    }
+
+    .banner-quote small {
+      font-size: 11px;
+    }
+
+    /* ================= FOOTER (dengan animasi lengkap) ================= */
+
+    .footer {
+      position: relative;
+      color: #fff;
+      padding: 45px 0 22px;
+      background-color: #0b2030;
+      background-image:
+        linear-gradient(rgba(11, 32, 48, .94), rgba(11, 32, 48, .97)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/20130808%20Kings%20Back%20Court%2002.jpg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .footer-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .9fr 1.2fr .8fr;
+      gap: 32px;
+      padding-bottom: 13px;
+    }
+
+    /* ---- BRAND ---- */
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 7px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .footer-logo {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: #fff;
+      transition: transform .6s ease, background .4s ease, border-color .4s ease;
+      flex-shrink: 0;
+    }
+
+    .footer-brand:hover .footer-logo {
+      transform: rotate(360deg) scale(1.15);
+      background: rgba(240, 211, 140, .15);
+      border-color: var(--gold-light);
+    }
+
+    .footer-brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      line-height: 1;
+      color: #fff;
+      transition: color .4s ease, letter-spacing .4s ease;
+    }
+
+    .footer-brand:hover .footer-brand-name {
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+
+    .footer-brand-sub {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      margin-top: 5px;
+      color: var(--gold-light);
+      transition: color .4s ease;
+    }
+
+    /* ---- TAGLINE ---- */
+
+    .footer-tagline {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 11px;
+      margin-top: 16px;
+      opacity: .85;
+      display: inline-block;
+      color: #fff;
+      transition: transform .4s ease, color .4s ease;
+      cursor: default;
+    }
+
+    .footer-tagline:hover {
+      transform: translateX(6px);
+      color: var(--gold-light);
+    }
+
+    .footer-description {
+      max-width: 270px;
+      margin: 6px 0 8px;
+      color: #c5d8e0;
+      font-size: 9px;
+      line-height: 1.55;
+    }
+
+    /* ---- CONTACT ITEM ---- */
+
+    .footer-divider {
+      border-left: 1px solid rgba(255, 255, 255, .3);
+      padding-left: 24px;
+      min-height: 100px;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 10px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      transition: transform .3s ease, color .3s ease;
+      cursor: pointer;
+    }
+
+    .footer-contact:hover {
+      transform: translateX(5px);
+      color: var(--gold-light);
+    }
+
+    .footer-contact i {
+      font-size: 15px;
+      flex-shrink: 0;
+      transition: transform .4s ease;
+    }
+
+    .footer-contact:hover i {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    /* ---- FOOTER TITLE ---- */
+
+    .footer-title {
+      font-family: "Inter", "DM Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+      color: #fff;
+    }
+
+    /* ---- FOOTER LINKS ---- */
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-links li { margin: 0; }
+
+    .footer-links a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-size: 10px;
+      display: inline-block;
+      padding-left: 0;
+      transition: color .3s ease, padding-left .3s ease;
+    }
+
+    .footer-links a::before {
+      content: "›";
+      position: absolute;
+      left: -2px;
+      opacity: 0;
+      transition: opacity .3s ease;
+      color: var(--gold-light);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 10px;
+    }
+
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+
+    /* ---- SOCIAL ICONS ---- */
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 18px;
+      display: inline-block;
+      transition: transform .3s ease, color .3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--gold-light);
+      transform: translateY(-4px) scale(1.2);
+    }
+
+    /* ---- FOOTER BOTTOM ---- */
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .3);
+      margin-top: 22px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .copyright {
+      font-size: 9px;
+      opacity: .85;
+      color: #fff;
+      transition: color .3s ease;
+    }
+
+    .copyright:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-bottom-links span {
+      font-size: 9px;
+      opacity: .85;
+      display: inline-block;
+      color: #fff;
+      transition: color .3s ease, transform .3s ease;
+    }
+
+    .footer-bottom-links span:hover {
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* ================= SEARCH OVERLAY ================= */
+
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: #031d2def;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+    }
+
+    .search-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .close-search {
+      position: absolute;
+      right: 28px;
+      top: 22px;
+      color: white;
+      background: none;
+      border: none;
+      font-size: 28px;
+      transition: transform .3s ease, color .3s ease;
+    }
+
+    .close-search:hover {
+      transform: rotate(90deg);
+      color: var(--gold-light);
+    }
+
+    .search-box {
+      width: min(600px, 88vw);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 3px;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #ffffff80;
+      color: white;
+      font: 26px 'Playfair Display', serif;
+      outline: 0;
+    }
+
+    .search-box input::placeholder {
+      color: #ffffff8a;
+    }
+
+    .search-box small {
+      display: block;
+      color: #ffffff9b;
+      margin-top: 12px;
+    }
+
+    /* ================= BACK TO TOP ================= */
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      color: var(--navy);
+      border: 0;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all .4s ease;
+      z-index: 999;
+      box-shadow: 0 8px 22px rgba(240, 211, 140, .45);
+      cursor: pointer;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--navy);
+      color: var(--gold-light);
+      transform: translateY(-4px);
+    }
+
+    /* ================= REVEAL ANIMATIONS ================= */
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      opacity: 0;
+      transition: opacity .9s ease, transform .9s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal        { transform: translateY(40px); }
+    .reveal-left   { transform: translateX(-40px); }
+    .reveal-right  { transform: translateX(40px); }
+
+    .reveal.active,
+    .reveal-left.active,
+    .reveal-right.active {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .d-1 { transition-delay: .1s; }
+    .d-2 { transition-delay: .2s; }
+    .d-3 { transition-delay: .3s; }
+    .d-4 { transition-delay: .4s; }
+    .d-5 { transition-delay: .5s; }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 991.98px) {
+      .spc-navbar .container { padding-top: 10px; padding-bottom: 10px; }
+      .spc-navbar .navbar-collapse { padding: 10px 0 5px; }
+      .spc-navbar .navbar-nav { align-items: stretch !important; }
+      .spc-navbar .nav-link {
+        min-height: 44px;
+        padding: 12px 8px !important;
+      }
+      .spc-navbar .nav-link::after {
+        right: auto;
+        bottom: 4px;
+        left: 8px;
+        width: 42px;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      .spc-navbar .nav-link:hover::after,
+      .spc-navbar .nav-link.active::after,
+      .spc-navbar .nav-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+      .spc-navbar .dropdown-menu {
+        margin: 0 0 8px;
+        background: rgba(255, 255, 255, .98);
+      }
+      .spc-register { margin: 12px 0 5px; align-self: flex-start; }
+
+      .mission-list {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .footer-divider {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .25);
+        padding-top: 20px;
+        padding-left: 0;
+        margin-top: 20px;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        height: 310px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .vision-intro {
+        padding: 30px 0 45px;
+      }
+
+      .campus-img {
+        height: 240px;
+      }
+
+      .quote-card {
+        right: 8px;
+        bottom: -27px;
+        width: 180px;
+      }
+
+      .mission-section {
+        padding: 25px 0;
+      }
+
+      .mission-photo {
+        height: 220px;
+      }
+
+      .mission-item {
+        gap: 15px;
+        margin: 18px 0;
+      }
+
+      .mission-icon {
+        flex-basis: 56px;
+        width: 56px;
+        height: 56px;
+        font-size: 25px;
+      }
+
+      .quote-banner {
+        min-height: 180px;
+      }
+
+      .quote-banner-bg {
+        left: 15%;
+        opacity: .55;
+      }
+
+      .banner-quote p {
+        font-size: 18px;
+      }
+
+      .footer-container {
+        padding: 23px 20px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 18px;
+      }
+
+      .footer-bottom {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-bottom-links {
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .spc-crest {
+        width: 34px;
+        height: 38px;
+        font-size: 22px;
+      }
+
+      .spc-brand-text strong {
+        font-size: 13px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 23px 15px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+        text-align: left;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .hero-bg,
+      .quote-banner-bg {
+        animation: none !important;
+      }
+
+      .hero-parallax,
+      .hero-content,
+      .banner-parallax {
+        transform: none !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg spc-navbar" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand spc-brand" href="index.html" target="_blank" rel="noopener noreferrer">
+      <span class="spc-crest">✣</span>
+      <span class="spc-brand-text">
+        <strong>STEPHEN PERSE</strong>
+        <small>CAMBRIDGE</small>
+      </span>
+    </a>
+
+    <button class="navbar-toggler spc-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#spcNavbarMenu"
+            aria-controls="spcNavbarMenu" aria-expanded="false"
+            aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="spcNavbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" target="_blank" rel="noopener noreferrer">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="tentangDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang <i class="bi bi-chevron-down small"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="tentangDropdown">
+            <li><a class="dropdown-item" href="profil-singkat.html" target="_blank" rel="noopener noreferrer">Profil Singkat</a></li>
+            <li><a class="dropdown-item active" href="visi-misi.html" target="_blank" rel="noopener noreferrer">Visi &amp; Misi</a></li>
+            <li><a class="dropdown-item" href="struktur-organisasi.html" target="_blank" rel="noopener noreferrer">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="galeri.html" target="_blank" rel="noopener noreferrer">Galeri</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="jurusan.html" target="_blank" rel="noopener noreferrer">Jurusan</a></li>
+        <li class="nav-item"><a class="nav-link" href="fasilitas.html" target="_blank" rel="noopener noreferrer">Fasilitas</a></li>
+        <li class="nav-item"><a class="nav-link" href="berita.html" target="_blank" rel="noopener noreferrer">Berita</a></li>
+        <li class="nav-item"><a class="nav-link" href="ppdb.html" target="_blank" rel="noopener noreferrer">PPDB</a></li>
+      </ul>
+
+      <a class="spc-register" href="ppdb.html" target="_blank" rel="noopener noreferrer">
+        Daftar Sekarang <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- ================= AKHIR NAVBAR ================= -->
+
+
+<!-- ================= HERO (KEN BURNS + PARALLAX) ================= -->
+<section class="hero" id="beranda">
+
+  <!-- Layer luar: parallax -->
+  <div class="hero-parallax" id="heroParallax">
+    <!-- Layer dalam: Ken Burns -->
+    <div class="hero-bg" id="heroBg"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+    <div class="hero-content" id="heroContent">
+      <div class="eyebrow">Tentang Kami</div>
+      <h1>Visi &amp; Misi</h1>
+      <p>
+        Membentuk generasi global yang berkarakter,
+        <br class="d-none d-md-block">
+        berprestasi, dan siap menghadapi masa depan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISI ================= -->
+<section class="vision-intro" id="visi-misi">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 reveal-left d-1">
+        <div class="section-label">Visi</div>
+
+        <h2 class="section-title">
+          Menjadi Sekolah Internasional
+          <br class="d-none d-xl-block">
+          Pilihan Utama di Dunia
+        </h2>
+
+        <p class="section-text">
+          Stephen Perse Cambridge berkomitmen untuk menjadi
+          sekolah internasional terkemuka yang diakui secara
+          global, dengan pendidikan berkualitas tinggi,
+          lingkungan belajar yang inspiratif, serta membentuk
+          siswa yang berkarakter, percaya diri, dan berorientasi
+          pada masa depan.
+        </p>
+
+        <a class="gold-button" href="#profil">
+          Tentang Sekolah Kami
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="col-lg-6 reveal-right d-2">
+        <div class="image-wrap">
+
+          <img
+            class="campus-img"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1100&q=85"
+            alt="Bangunan kampus bergaya klasik"
+            loading="lazy">
+
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+
+            <p>
+              "Pendidikan hari ini, untuk masa depan
+              yang lebih baik."
+            </p>
+
+            <div class="quote-author">
+              <span style="display:inline-block;width:30px;height:1px;background:#bd8a2e;vertical-align:middle;margin-right:8px"></span>
+              STEPHEN PERSE CAMBRIDGE
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MISI ================= -->
+<section class="mission-section" id="profil">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <div class="col-lg-5 reveal-left d-1">
+        <div class="section-label">Misi</div>
+
+        <h2 class="section-title">
+          Mewujudkan Pendidikan Berkualitas dan Berkelanjutan
+        </h2>
+
+        <p class="section-text mb-2">
+          Untuk mencapai visi tersebut, Stephen Perse Cambridge
+          menjalankan misi sebagai berikut:
+        </p>
+
+        <img
+    class="mission-photo"
+    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85"
+    alt="Siswa sedang belajar di lingkungan sekolah"
+    loading="eager"
+    onerror="this.onerror=null; this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Guru_dan_Murid.jpg';">
+      </div>
+
+      <div class="col-lg-7 reveal-right d-2">
+        <div class="mission-list">
+
+          <div class="mission-item">
+            <div class="mission-icon">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <div>
+              <h3>Menyelenggarakan Pendidikan Berkualitas</h3>
+              <p>
+                Memberikan kurikulum internasional yang
+                komprehensif dan relevan dengan kebutuhan global.
+              </p>
+            </div>
+          </div>
+
+          <div class="mission-item">
+            <div class="mission-icon">
+              <i class="bi bi-people"></i>
+            </div>
+
+            <div>
+              <h3>Mengembangkan Potensi Siswa</h3>
+              <p>
+                Mendorong setiap siswa untuk mencapai potensi
+                terbaik mereka melalui pembelajaran yang personal
+                dan inklusif.
+              </p>
+            </div>
+          </div>
+
+          <div class="mission-item">
+            <div class="mission-icon">
+              <i class="bi bi-globe"></i>
+            </div>
+
+            <div>
+              <h3>Menanamkan Nilai-Nilai Moral dan Kepemimpinan</h3>
+              <p>
+                Membentuk karakter, integritas, dan jiwa
+                kepemimpinan yang kuat.
+              </p>
+            </div>
+          </div>
+
+          <div class="mission-item mb-0">
+            <div class="mission-icon">
+              <i class="bi bi-leaf"></i>
+            </div>
+
+            <div>
+              <h3>Membangun Komunitas Sekolah yang Inklusif</h3>
+              <p>
+                Menciptakan lingkungan yang aman, suportif,
+                dan penuh rasa hormat bagi semua.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE BANNER (KEN BURNS + PARALLAX) ================= -->
+<section class="quote-banner" id="berita">
+
+  <!-- Layer luar: parallax -->
+  <div class="banner-parallax" id="bannerParallax">
+    <!-- Layer dalam: Ken Burns -->
+    <div class="quote-banner-bg" id="bannerBg"></div>
+  </div>
+
+  <div class="container position-relative">
+    <div class="banner-quote">
+      <p>
+        "Kami percaya bahwa pendidikan adalah kunci
+        untuk menciptakan dunia yang lebih baik."
+      </p>
+      <small>— Stephen Perse Cambridge</small>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER (dengan animasi lengkap) ================= -->
+<footer class="footer" id="ppdb">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div class="reveal-left d-1">
+
+        <a href="#beranda" class="footer-brand">
+          <div class="footer-logo">✧</div>
+          <div>
+            <div class="footer-brand-name">STEPHEN PERSE</div>
+            <div class="footer-brand-sub">CAMBRIDGE</div>
+          </div>
+        </a>
+
+        <div class="footer-tagline">
+          Learning Today, Leading Tomorrow
+        </div>
+
+        <p class="footer-description">
+          Stephen Perse Cambridge adalah sekolah internasional yang berkomitmen
+          memberikan pendidikan berkualitas dengan nilai-nilai global.
+        </p>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div class="reveal d-2" id="bkk">
+        <div class="footer-divider">
+
+          <div class="footer-contact">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Cambridge, United Kingdom</span>
+          </div>
+
+          <div class="footer-contact">
+            <i class="bi bi-telephone-fill"></i>
+            <span>+44 1223 123456</span>
+          </div>
+
+          <div class="footer-contact">
+            <i class="bi bi-envelope-fill"></i>
+            <span>info@stephenperse.sch.id</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="reveal d-3">
+        <div class="footer-divider">
+
+          <div class="footer-title">Quick Links</div>
+
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#profil">Tentang Kami</a></li>
+            <li><a href="#visi-misi">Visi &amp; Misi</a></li>
+            <li><a href="#struktur">Jurusan</a></li>
+            <li><a href="#berita">Fasilitas</a></li>
+            <li><a href="#ppdb">PPDB</a></li>
+            <li><a href="#bkk">BKK</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="reveal-right d-4">
+        <div class="footer-divider">
+
+          <div class="footer-title">Ikuti Kami</div>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom reveal d-5">
+
+      <div class="copyright">
+        © <span id="currentYear">2026</span> Stephen Perse Cambridge. All rights reserved.
+      </div>
+
+      <div class="footer-bottom-links">
+        <span>Excellence</span>
+        <span>|</span>
+        <span>Character</span>
+        <span>|</span>
+        <span>Global Perspective</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= SEARCH OVERLAY ================= -->
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+
+  <button class="close-search" id="closeSearch" aria-label="Tutup pencarian">
+    <i class="bi bi-x-lg"></i>
+  </button>
+
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Cari di website..."
+      autocomplete="off">
+
+    <small>Tekan Enter untuk mencari · Esc untuk menutup</small>
+  </div>
+</div>
+
+<!-- ================= BACK TO TOP ================= -->
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ==========================================
+     0. REDUCED MOTION CHECK
+  ========================================== */
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ==========================================
+     1. TAHUN OTOMATIS
+  ========================================== */
+  const yearEl = document.getElementById("currentYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ==========================================
+     2. NAVBAR SCROLLED STATE
+  ========================================== */
+  const mainNavbar = document.getElementById("mainNavbar");
+
+  /* ==========================================
+     3. SCROLL REVEAL (dari codingan 1)
+  ========================================== */
+  const revealEls = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add("active"));
+  }
+
+  /* ==========================================
+     4. PARALLAX + NAVBAR + BACK TO TOP
+  ========================================== */
+  const backToTop = document.getElementById("backToTop");
+  const hero = document.querySelector(".hero");
+  const heroParallax = document.getElementById("heroParallax");
+  const heroContent = document.getElementById("heroContent");
+  const bannerSection = document.getElementById("berita");
+  const bannerParallax = document.getElementById("bannerParallax");
+
+  let ticking = false;
+
+  function updateOnScroll() {
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+
+    /* Navbar & Back To Top */
+    if (mainNavbar) mainNavbar.classList.toggle("scrolled", y > 30);
+    if (backToTop) backToTop.classList.toggle("show", y > 400);
+
+    if (reduceMotion) {
+      ticking = false;
+      return;
+    }
+
+    /* HERO PARALLAX (layer luar) */
+    if (heroParallax && hero) {
+      const heroRect = hero.getBoundingClientRect();
+      if (heroRect.bottom > 0) {
+        const offset = y * 0.4;
+        heroParallax.style.transform = `translateY(${offset}px)`;
+      }
+    }
+
+    /* HERO CONTENT PARALLAX */
+    if (heroContent && y < vh) {
+      heroContent.style.transform = `translateY(${y * 0.5}px)`;
+      heroContent.style.opacity = Math.max(0, 1 - y / (vh * 0.75));
+    }
+
+    /* QUOTE BANNER PARALLAX */
+    if (bannerParallax && bannerSection) {
+      const bRect = bannerSection.getBoundingClientRect();
+      if (bRect.top < vh && bRect.bottom > 0) {
+        const progress = (vh - bRect.top) / (vh + bRect.height);
+        bannerParallax.style.transform =
+          `translateY(${(progress - 0.5) * -50}px)`;
+      }
+    }
+
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateOnScroll);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateOnScroll, { passive: true });
+  updateOnScroll();
+
+  /* BACK TO TOP CLICK */
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* ==========================================
+     5. SEARCH OVERLAY
+  ========================================== */
+  const overlay = document.getElementById("searchOverlay");
+  const openSearchBtn = document.getElementById("openSearch");
+  const closeSearchBtn = document.getElementById("closeSearch");
+  const searchInput = document.getElementById("searchInput");
+
+  function openSearch() {
+    if (!overlay) return;
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden", "false");
+    setTimeout(function () {
+      if (searchInput) searchInput.focus();
+    }, 100);
+  }
+
+  function closeSearch() {
+    if (!overlay) return;
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+
+  if (openSearchBtn) {
+    openSearchBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openSearch();
+    });
+  }
+
+  if (closeSearchBtn) closeSearchBtn.addEventListener("click", closeSearch);
+
+  if (overlay) {
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closeSearch();
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeSearch();
+  });
+
+  /* PENCARIAN TEKS */
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && searchInput.value.trim()) {
+        const term = searchInput.value.trim().toLowerCase();
+
+        const elements = document.querySelectorAll(
+          "main h1, main h2, main h3, main p, .hero h1, .hero p, .section-title, .section-text"
+        );
+
+        const found = Array.from(elements).find(function (el) {
+          return el.textContent.toLowerCase().includes(term);
+        });
+
+        closeSearch();
+
+        if (found) {
+          found.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        } else {
+          alert('Kata "' + searchInput.value.trim() +
+            '" tidak ditemukan pada halaman ini.');
+        }
+      }
+    });
+  }
+
+  /* ==========================================
+     6. SMOOTH SCROLL ANCHOR (dari codingan 1)
+  ========================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (!targetId || targetId === "#" || targetId.length < 2) return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+
+        const navbarCollapse = document.getElementById("spcNavbarMenu");
+        if (navbarCollapse && navbarCollapse.classList.contains("show") && window.bootstrap) {
+          bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        }
+      }
+    });
+  });
+
+  /* ==========================================
+     7. CLOSE NAVBAR MOBILE
+  ========================================== */
+  document.querySelectorAll("#mainNavbar .nav-link, #mainNavbar .dropdown-item")
+    .forEach(link => {
+      link.addEventListener("click", () => {
+        const navbarCollapse = document.getElementById("spcNavbarMenu");
+        if (navbarCollapse && navbarCollapse.classList.contains("show") && window.bootstrap) {
+          bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        }
+      });
+    });
+
+});
+</script>
+
+</body>
+</html>

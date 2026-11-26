@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informasi Penerimaan Peserta Didik Baru Stephen Perse Cambridge.">
+  <title>PPDB | Stephen Perse Cambridge</title>
+
+  <!-- Bootstrap 5.3.7 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #002d46;
+      --navy-dark: #002338;
+      --blue: #2879a8;  
+      --gold: #f5d58b;
+      --cream: #f8f8f2;
+      --border: #e5e7df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--navy);
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      font-size: 12px;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .serif {
+      font-family: "Playfair Display", serif;
+    }
+
+    /* =========================================
+       NAVBAR GLOBAL
+    ========================================= */
+
+    .spc-navbar {
+      --spc-navy: #10293b;
+      --spc-navy-dark: #0b2030;
+      --spc-gold: #dfc89a;
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+      min-height: 72px;
+      padding: 0;
+      background: var(--spc-navy);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+
+    .spc-navbar.scrolled {
+      background: var(--spc-navy-dark);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .22);
+    }
+
+    .spc-navbar .container {
+      min-height: 72px;
+      max-width: 1440px;
+    }
+
+    .spc-navbar .spc-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-right: 24px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .spc-crest {
+      display: grid;
+      width: 42px;
+      height: 46px;
+      flex-shrink: 0;
+      place-items: center;
+      border: 2px solid #fff;
+      color: #fff;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      line-height: 1;
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .spc-brand:hover .spc-crest {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    .spc-brand-text strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .spc-brand-text small {
+      display: block;
+      margin-top: 4px;
+      color: var(--spc-gold);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+
+    .spc-navbar .navbar-nav { gap: 2px; }
+    .spc-navbar .nav-item { position: relative; }
+
+    .spc-navbar .nav-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 27px 12px 25px !important;
+      color: rgba(255, 255, 255, .9) !important;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .25s ease;
+    }
+
+    .spc-navbar .nav-link::after {
+      position: absolute;
+      right: 12px;
+      bottom: 13px;
+      left: 12px;
+      height: 2px;
+      background: var(--spc-gold);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .3s ease;
+    }
+
+    .spc-navbar .nav-link:hover::after,
+    .spc-navbar .nav-link.active::after,
+    .spc-navbar .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .spc-navbar .nav-link:hover,
+    .spc-navbar .nav-link.active {
+      color: var(--spc-gold) !important;
+    }
+
+    .spc-navbar .spc-arrow {
+      font-size: 10px;
+      transition: transform .25s ease;
+    }
+
+    .spc-navbar .dropdown-toggle[aria-expanded="true"] .spc-arrow {
+      transform: rotate(180deg);
+    }
+
+    .spc-navbar .dropdown-menu {
+      min-width: 215px;
+      margin-top: 0;
+      padding: 8px;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+    }
+
+    .spc-navbar .dropdown-item {
+      padding: 11px 13px;
+      border-radius: 3px;
+      color: var(--spc-navy);
+      font-size: 12px;
+      transition: background .2s ease, padding-left .2s ease;
+    }
+
+    .spc-navbar .dropdown-item:hover,
+    .spc-navbar .dropdown-item.active {
+      padding-left: 19px;
+      background: #f5eedb;
+      color: var(--spc-navy);
+    }
+
+    .spc-register {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      flex-shrink: 0;
+      margin-left: 18px;
+      padding: 11px 17px;
+      border: 1px solid var(--spc-gold);
+      border-radius: 5px;
+      background: var(--spc-gold);
+      color: var(--spc-navy-dark);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .spc-register:hover {
+      transform: translateY(-2px);
+      background: #f0dcb4;
+      color: var(--spc-navy-dark);
+    }
+
+    .spc-navbar .spc-toggler {
+      border-color: rgba(255, 255, 255, .5);
+      box-shadow: none;
+    }
+
+    .spc-navbar .spc-toggler:focus {
+      box-shadow: 0 0 0 3px rgba(223, 200, 154, .2);
+    }
+
+    .spc-navbar .spc-toggler .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    /* ================= SEARCH OVERLAY ================= */
+
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(0,28,44,.97);
+    }
+
+    .search-overlay.show {
+      display: flex;
+      animation: fadeIn .25s ease;
+    }
+
+    .search-box {
+      position: relative;
+      width: min(620px, 100%);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 17px 45px 17px 4px;
+      border: 0;
+      border-bottom: 2px solid var(--gold);
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 22px;
+    }
+
+    .search-box input::placeholder {
+      color: rgba(255,255,255,.55);
+    }
+
+    .close-search {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      transition: transform .3s ease, color .3s ease;
+    }
+
+    .close-search:hover {
+      transform: rotate(90deg);
+      color: var(--gold);
+    }
+
+    /* ================= HERO (KEN BURNS + PARALLAX) ================= */
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 265px;
+      overflow: hidden;
+      color: white;
+      background: var(--navy-dark);
+    }
+
+    /* Layer LUAR untuk parallax */
+    .hero-parallax {
+      position: absolute;
+      inset: -15% 0;
+      height: 130%;
+      z-index: 1;
+      will-change: transform;
+      transform: translateY(0);
+    }
+
+    /* Layer DALAM untuk Ken Burns */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,32,43,.94) 0%, rgba(0,35,44,.78) 34%, rgba(0,25,35,.08) 72%),
+        url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90") center 53% / cover no-repeat;
+      animation: kenburns 22s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes kenburns {
+      0%   { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.18) translate(-2%, -1.5%); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,24,37,.15), transparent 35%);
+      content: "";
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+      padding: 28px 24px;
+      will-change: transform, opacity;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::after {
+      width: 95px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    .hero h1 {
+      max-width: 550px;
+      margin: 0 0 9px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(29px, 3.5vw, 37px);
+      font-weight: 700;
+      line-height: 1.12;
+    }
+
+    .hero p {
+      max-width: 390px;
+      margin-bottom: 13px;
+      color: rgba(255,255,255,.94);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    /* ================= GENERAL SECTION ================= */
+
+    .page-content {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.9), transparent 70%),
+        var(--cream);
+    }
+
+    .content-container {
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .section-kicker {
+      margin-bottom: 3px;
+      color: #17496b;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .section-description {
+      margin: 0;
+      color: var(--blue);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* ================= INTRO ================= */
+
+    .intro-section {
+      padding: 22px 0 16px;
+      border-bottom: 1px solid #e9eae3;
+    }
+
+    .intro-copy {
+      padding-right: 18px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 18px;
+    }
+
+    .benefit {
+      padding: 0 8px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: transform .4s ease;
+    }
+
+    .benefit:hover {
+      transform: translateY(-6px);
+    }
+
+    .benefit:last-child {
+      border-right: 0;
+    }
+
+    .benefit-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 43px;
+      height: 43px;
+      margin: 0 auto 7px;
+      border: 1px solid #f2dfb2;
+      border-radius: 50%;
+      background: #faf5e8;
+      color: #0b456a;
+      font-size: 21px;
+      transition: background .3s ease, transform .4s ease, color .3s ease;
+    }
+
+    .benefit:hover .benefit-icon {
+      background: var(--gold);
+      transform: scale(1.15) rotate(8deg);
+      color: var(--navy);
+    }
+
+    .benefit h3 {
+      margin: 0;
+      color: #124365;
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .intro-visual {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+      border-radius: 5px;
+      background: #dce4e4;
+      transition: transform .5s ease, box-shadow .5s ease;
+      will-change: transform;
+    }
+
+    .intro-visual:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(20,39,52,.18);
+    }
+
+    .intro-visual > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .intro-visual:hover > img {
+      transform: scale(1.06);
+    }
+
+    .quote-card {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 58%;
+      padding: 12px 16px;
+      border-radius: 5px 0 0 0;
+      background: var(--navy);
+      color: white;
+      transition: transform .4s ease, box-shadow .4s ease;
+      will-change: transform;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(20,39,52,.18);
+    }
+
+    .quote-card blockquote {
+      margin: 0 0 4px;
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .quote-card small {
+      font-size: 9px;
+    }
+
+    /* ================= REGISTRATION STEPS ================= */
+
+    .registration-section {
+      padding: 14px 0 17px;
+      border-bottom: 1px solid #e9eae3;
+    }
+
+    .registration-heading {
+      margin-bottom: 12px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 135px;
+      padding: 7px 10px 10px;
+      border: 1px solid #e8e9e2;
+      border-right: 0;
+      background: rgba(255,255,255,.18);
+      transition: background .3s ease, box-shadow .3s ease, transform .4s ease;
+      will-change: transform;
+    }
+
+    .step-card:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .step-card:last-child {
+      border-right: 1px solid #e8e9e2;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .step-card:hover {
+      z-index: 1;
+      background: white;
+      box-shadow: 0 12px 24px rgba(0,43,67,.10);
+      transform: translateY(-5px);
+    }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .step-number {
+      display: grid;
+      flex-shrink: 0;
+      place-items: center;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      transition: background .3s ease, transform .3s ease;
+    }
+
+    .step-card:hover .step-number {
+      background: #b17b1e;
+      transform: scale(1.15);
+    }
+
+    .step-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border: 1px solid #f0dfb8;
+      border-radius: 50%;
+      background: #fbf5e7;
+      color: #0a4569;
+      font-size: 22px;
+      transition: background .3s ease, transform .4s ease, color .3s ease;
+    }
+
+    .step-card:hover .step-icon {
+      background: var(--gold);
+      transform: scale(1.1) rotate(8deg);
+      color: var(--navy);
+    }
+
+    .step-card h3 {
+      margin: 5px 0 5px;
+      color: #164462;
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.4;
+      transition: color .3s ease;
+    }
+
+    .step-card:hover h3 {
+      color: #b17b1e;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--blue);
+      font-size: 9.5px;
+      line-height: 1.5;
+    }
+
+    /* ================= REGISTRATION SIDEBAR ================= */
+
+    .registration-sidebar {
+      height: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      background: linear-gradient(150deg, #00364f, #00243a);
+      color: white;
+      transition: transform .4s ease, box-shadow .4s ease;
+      will-change: transform;
+    }
+
+    .registration-sidebar:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(20,39,52,.22);
+    }
+
+    .registration-sidebar h3 {
+      margin-bottom: 7px;
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .registration-sidebar > p {
+      color: #e0e9ed;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .sidebar-links a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
+      font-size: 10px;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .sidebar-links a:hover {
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .sidebar-links i {
+      font-size: 16px;
+      transition: transform .3s ease;
+    }
+
+    .sidebar-links a:hover i {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    /* ================= SCHEDULE ================= */
+
+    .schedule-section {
+      padding: 17px 0;
+      border-bottom: 1px solid #e9eae3;
+    }
+
+    .schedule-intro {
+      padding-right: 14px;
+    }
+
+    .schedule-intro .btn-gold {
+      margin-top: 10px;
+    }
+
+    .schedule-card {
+      height: 100%;
+      min-height: 115px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: rgba(255,255,255,.28);
+      transition: transform .35s cubic-bezier(.22, 1, .36, 1),
+                  box-shadow .35s cubic-bezier(.22, 1, .36, 1),
+                  border-color .35s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .schedule-card:hover {
+      transform: translateY(-6px) scale(1.005);
+      box-shadow: 0 18px 38px rgba(0,43,67,.12);
+      border-color: var(--gold);
+    }
+
+    .schedule-card > i {
+      display: block;
+      margin-bottom: 5px;
+      color: #0a456a;
+      font-size: 16px;
+      transition: transform .4s ease, color .4s ease;
+    }
+
+    .schedule-card:hover > i {
+      transform: scale(1.2) rotate(-8deg);
+      color: #b17b1e;
+    }
+
+    .schedule-date {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--blue);
+      font-size: 9px;
+    }
+
+    .schedule-card h3 {
+      margin: 0 0 4px;
+      color: #123d59;
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.4;
+      transition: color .3s ease;
+    }
+
+    .schedule-card:hover h3 {
+      color: #b17b1e;
+    }
+
+    .schedule-card p {
+      margin: 0;
+      color: var(--blue);
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    /* ================= NEWS ================= */
+
+    .news-section {
+      padding: 17px 0 19px;
+    }
+
+    .news-intro {
+      padding-right: 15px;
+    }
+
+    .news-intro .btn-gold {
+      margin-top: 10px;
+    }
+
+    .news-card {
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: rgba(255,255,255,.35);
+      transition: transform .35s cubic-bezier(.22, 1, .36, 1),
+                  box-shadow .35s cubic-bezier(.22, 1, .36, 1),
+                  border-color .35s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px) scale(1.005);
+      box-shadow: 0 18px 38px rgba(0,43,67,.14);
+      border-color: var(--gold);
+    }
+
+    .news-image {
+      width: 100%;
+      height: 72px;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .news-card:hover .news-image {
+      transform: scale(1.08) rotate(.6deg);
+    }
+
+    .news-body {
+      padding: 9px 10px 10px;
+    }
+
+    .news-date {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--blue);
+      font-size: 8px;
+    }
+
+    .news-card h3 {
+      margin: 0 0 5px;
+      color: #123e5b;
+      font-family: "Playfair Display", serif;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.4;
+      transition: color .3s ease;
+    }
+
+    .news-card:hover h3 {
+      color: #b17b1e;
+    }
+
+    .news-card p {
+      margin: 0 0 6px;
+      color: #5188a7;
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .news-link {
+      color: #0b4d71;
+      font-size: 9px;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .25s ease;
+    }
+
+    .news-link:hover {
+      color: #b27d20;
+    }
+
+    /* ================= CTA (KEN BURNS + PARALLAX) ================= */
+
+    .bottom-cta {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background: var(--navy-dark);
+    }
+
+    .cta-parallax {
+      position: absolute;
+      inset: -15% 0;
+      height: 130%;
+      z-index: 0;
+      will-change: transform;
+      transform: translateY(0);
+    }
+
+    .cta-parallax-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,42,60,.97), rgba(0,43,58,.72) 62%, rgba(0,31,45,.85)),
+        url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85") center 60% / cover no-repeat;
+      animation: kenburns 24s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .cta-container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1250px;
+      min-height: 102px;
+      margin: auto;
+      padding: 18px 24px;
+    }
+
+    .cta-label {
+      margin-bottom: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+    }
+
+    .cta-container h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(21px, 2.6vw, 27px);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .cta-container .btn-gold {
+      flex-shrink: 0;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 21px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-size: 10px;
+      font-weight: 700;
+      transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+
+    .btn-gold:hover {
+      background: #ffe5a9;
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 213, 139, .4);
+    }
+
+    /* ================= FOOTER (dengan animasi lengkap) ================= */
+
+    .footer {
+      position: relative;
+      color: #fff;
+      padding: 45px 0 22px;
+      background-color: #0b2030;
+      background-image:
+        linear-gradient(rgba(11, 32, 48, .94), rgba(11, 32, 48, .97)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/20130808%20Kings%20Back%20Court%2002.jpg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .footer-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .9fr 1.2fr .8fr;
+      gap: 32px;
+      padding-bottom: 13px;
+    }
+
+    /* ---- BRAND ---- */
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 7px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .footer-logo {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: #fff;
+      transition: transform .6s ease, background .4s ease, border-color .4s ease;
+      flex-shrink: 0;
+    }
+
+    .footer-brand:hover .footer-logo {
+      transform: rotate(360deg) scale(1.15);
+      background: rgba(245, 213, 139, .15);
+      border-color: var(--gold);
+    }
+
+    .footer-brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      line-height: 1;
+      color: #fff;
+      transition: color .4s ease, letter-spacing .4s ease;
+    }
+
+    .footer-brand:hover .footer-brand-name {
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .footer-brand-sub {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      margin-top: 5px;
+      color: var(--gold);
+      transition: color .4s ease;
+    }
+
+    /* ---- TAGLINE ---- */
+
+    .footer-tagline {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 11px;
+      margin-top: 16px;
+      opacity: .85;
+      display: inline-block;
+      color: #fff;
+      transition: transform .4s ease, color .4s ease;
+      cursor: default;
+    }
+
+    .footer-tagline:hover {
+      transform: translateX(6px);
+      color: var(--gold);
+    }
+
+    .footer-description {
+      max-width: 270px;
+      margin: 6px 0 8px;
+      color: #c5d8e0;
+      font-size: 9px;
+      line-height: 1.55;
+    }
+
+    /* ---- CONTACT ITEM ---- */
+
+    .footer-divider {
+      border-left: 1px solid rgba(255, 255, 255, .3);
+      padding-left: 24px;
+      min-height: 100px;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 10px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      transition: transform .3s ease, color .3s ease;
+      cursor: pointer;
+    }
+
+    .footer-contact:hover {
+      transform: translateX(5px);
+      color: var(--gold);
+    }
+
+    .footer-contact i {
+      font-size: 15px;
+      flex-shrink: 0;
+      transition: transform .4s ease;
+    }
+
+    .footer-contact:hover i {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    /* ---- FOOTER TITLE ---- */
+
+    .footer-title {
+      font-family: "Inter", "DM Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+      color: #fff;
+    }
+
+    /* ---- FOOTER LINKS ---- */
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-links li { margin: 0; }
+
+    .footer-links a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-size: 10px;
+      display: inline-block;
+      padding-left: 0;
+      transition: color .3s ease, padding-left .3s ease;
+    }
+
+    .footer-links a::before {
+      content: "›";
+      position: absolute;
+      left: -2px;
+      opacity: 0;
+      transition: opacity .3s ease;
+      color: var(--gold);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+      padding-left: 10px;
+    }
+
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+
+    /* ---- SOCIAL ICONS ---- */
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 18px;
+      display: inline-block;
+      transition: transform .3s ease, color .3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+      transform: translateY(-4px) scale(1.2);
+    }
+
+    /* ---- FOOTER BOTTOM ---- */
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .3);
+      margin-top: 22px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .copyright {
+      font-size: 9px;
+      opacity: .85;
+      color: #fff;
+      transition: color .3s ease;
+    }
+
+    .copyright:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-bottom-links span {
+      font-size: 9px;
+      opacity: .85;
+      display: inline-block;
+      color: #fff;
+      transition: color .3s ease, transform .3s ease;
+    }
+
+    .footer-bottom-links span:hover {
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ================= MODAL ================= */
+
+    .modal-content {
+      overflow: hidden;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      background: var(--navy);
+      color: white;
+    }
+
+    .modal-header .btn-close {
+      filter: invert(1);
+    }
+
+    .modal-title {
+      font-family: "Playfair Display", serif;
+    }
+
+    /* ================= BACK TO TOP ================= */
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy-dark);
+      border: 0;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all .4s ease;
+      z-index: 999;
+      box-shadow: 0 8px 22px rgba(245, 213, 139, .45);
+      cursor: pointer;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--navy);
+      color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    /* ================= REVEAL ANIMATIONS ================= */
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      opacity: 0;
+      transition: opacity .9s ease, transform .9s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal        { transform: translateY(40px); }
+    .reveal-left   { transform: translateX(-40px); }
+    .reveal-right  { transform: translateX(40px); }
+
+    .reveal.active,
+    .reveal-left.active,
+    .reveal-right.active {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .d-1 { transition-delay: .1s; }
+    .d-2 { transition-delay: .2s; }
+    .d-3 { transition-delay: .3s; }
+    .d-4 { transition-delay: .4s; }
+    .d-5 { transition-delay: .5s; }
+
+    /* Stagger untuk step cards */
+    .step-card.reveal:nth-child(1) { transition-delay: .05s; }
+    .step-card.reveal:nth-child(2) { transition-delay: .1s; }
+    .step-card.reveal:nth-child(3) { transition-delay: .15s; }
+    .step-card.reveal:nth-child(4) { transition-delay: .2s; }
+    .step-card.reveal:nth-child(5) { transition-delay: .25s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 991.98px) {
+      .spc-navbar .container { padding-top: 10px; padding-bottom: 10px; }
+      .spc-navbar .navbar-collapse { padding: 10px 0 5px; }
+      .spc-navbar .navbar-nav { align-items: stretch !important; }
+      .spc-navbar .nav-link {
+        min-height: 44px;
+        padding: 12px 8px !important;
+      }
+      .spc-navbar .nav-link::after {
+        right: auto;
+        bottom: 4px;
+        left: 8px;
+        width: 42px;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      .spc-navbar .nav-link:hover::after,
+      .spc-navbar .nav-link.active::after,
+      .spc-navbar .nav-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+      .spc-navbar .dropdown-menu {
+        margin: 0 0 8px;
+        background: rgba(255, 255, 255, .98);
+      }
+      .spc-register { margin: 12px 0 5px; align-self: flex-start; }
+
+      .hero {
+        min-height: 270px;
+      }
+
+      .intro-visual {
+        height: 230px;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .step-card,
+      .step-card:first-child,
+      .step-card:last-child {
+        border: 1px solid var(--border);
+        border-radius: 5px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .footer-divider {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .25);
+        padding-top: 20px;
+        padding-left: 0;
+        margin-top: 20px;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-content {
+        padding: 32px 22px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .intro-copy {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .benefit h3 {
+        font-size: 10px;
+      }
+
+      .registration-sidebar {
+        padding: 20px;
+      }
+
+      .schedule-intro,
+      .news-intro {
+        margin-bottom: 17px;
+        padding-right: 0;
+      }
+
+      .schedule-card {
+        min-height: 125px;
+      }
+
+      .news-image {
+        height: 125px;
+      }
+
+      .news-card h3 {
+        font-size: 12px;
+      }
+
+      .news-card p,
+      .news-link {
+        font-size: 10px;
+      }
+
+      .cta-container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        padding: 24px 22px;
+      }
+
+      .footer-container {
+        padding: 23px 20px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 18px;
+      }
+
+      .footer-bottom {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-bottom-links {
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .spc-crest {
+        width: 34px;
+        height: 38px;
+        font-size: 22px;
+      }
+
+      .spc-brand-text strong {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 300px;
+        background-position: 60% center;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero p {
+        max-width: 320px;
+      }
+
+      .content-container {
+        padding: 0 18px;
+      }
+
+      .intro-section {
+        padding-top: 24px;
+      }
+
+      .section-title {
+        font-size: 25px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 18px;
+      }
+
+      .benefit:nth-child(2) {
+        border-right: 0;
+      }
+
+      .intro-visual {
+        height: 220px;
+      }
+
+      .quote-card {
+        width: 72%;
+      }
+
+      .quote-card blockquote {
+        font-size: 14px;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .step-card {
+        min-height: 145px;
+        padding: 10px;
+      }
+
+      .step-card p {
+        font-size: 10px;
+      }
+
+      .schedule-card {
+        min-height: auto;
+      }
+
+      .news-image {
+        height: 150px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 23px 15px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+        text-align: left;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .hero-bg,
+      .cta-parallax-bg {
+        animation: none !important;
+      }
+
+      .hero-parallax,
+      .hero-content,
+      .cta-parallax {
+        transform: none !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg spc-navbar" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand spc-brand" href="index.html" target="_blank" rel="noopener noreferrer">
+      <span class="spc-crest">✣</span>
+      <span class="spc-brand-text">
+        <strong>STEPHEN PERSE</strong>
+        <small>CAMBRIDGE</small>
+      </span>
+    </a>
+
+    <button class="navbar-toggler spc-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#spcNavbarMenu"
+            aria-controls="spcNavbarMenu" aria-expanded="false"
+            aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="spcNavbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" target="_blank" rel="noopener noreferrer">Beranda</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="tentangDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang <i class="bi bi-chevron-down small"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="tentangDropdown">
+            <li><a class="dropdown-item" href="profil-singkat.html" target="_blank" rel="noopener noreferrer">Profil Singkat</a></li>
+            <li><a class="dropdown-item" href="visi-misi.html" target="_blank" rel="noopener noreferrer">Visi &amp; Misi</a></li>
+            <li><a class="dropdown-item" href="struktur-organisasi.html" target="_blank" rel="noopener noreferrer">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="galeri.html" target="_blank" rel="noopener noreferrer">Galeri</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="jurusan.html" target="_blank" rel="noopener noreferrer">Jurusan</a></li>
+        <li class="nav-item"><a class="nav-link" href="fasilitas.html" target="_blank" rel="noopener noreferrer">Fasilitas</a></li>
+        <li class="nav-item"><a class="nav-link" href="berita.html" target="_blank" rel="noopener noreferrer">Berita</a></li>
+        <li class="nav-item"><a class="nav-link active" href="ppdb.html" target="_blank" rel="noopener noreferrer">PPDB</a></li>
+      </ul>
+
+      <a class="spc-register" href="ppdb.html" target="_blank" rel="noopener noreferrer">
+        Daftar Sekarang <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- ================= AKHIR NAVBAR ================= -->
+
+
+<!-- ================= SEARCH OVERLAY ================= -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Pencarian">
+  <div class="search-box">
+    <input type="search" id="searchInput" placeholder="Cari informasi PPDB..." aria-label="Kata kunci">
+    <button type="button" class="close-search" id="closeSearch" aria-label="Tutup pencarian">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <p class="text-white-50 small mt-3">Cari informasi pendaftaran, jadwal, atau berita terbaru.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- ================= HERO (KEN BURNS + PARALLAX) ================= -->
+  <header class="hero" id="beranda">
+
+    <!-- Layer luar: parallax -->
+    <div class="hero-parallax" id="heroParallax">
+      <!-- Layer dalam: Ken Burns -->
+      <div class="hero-bg" id="heroBg"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content" id="heroContent">
+      <div class="eyebrow">Penerimaan Peserta Didik Baru · 2026</div>
+      <h1>Bergabunglah Bersama<br>Stephen Perse Cambridge</h1>
+      <p>
+        Wujudkan masa depan terbaik putra-putri Anda dengan pendidikan
+        berstandar internasional yang menggabungkan keunggulan akademik,
+        pengembangan karakter, dan wawasan global.
+      </p>
+      <a href="#ppdb" class="btn-gold">
+        Daftar Sekarang <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- ================= INTRO PPDB ================= -->
+    <section class="intro-section" id="tentang">
+      <div class="content-container">
+        <div class="row g-4 align-items-center">
+
+          <div class="col-lg-7 reveal-left d-1">
+            <div class="intro-copy">
+              <div class="section-kicker">Tentang PPDB</div>
+              <h2 class="section-title">Penerimaan Peserta Didik Baru</h2>
+              <p class="section-description">
+                Stephen Perse Cambridge membuka kesempatan bagi calon peserta didik
+                berbakat dan berpotensi untuk bergabung dalam lingkungan belajar
+                yang inspiratif, modern, dan berstandar internasional.
+              </p>
+
+              <div class="benefit-grid" id="keunggulan">
+                <div class="benefit">
+                  <div class="benefit-icon"><i class="bi bi-mortarboard"></i></div>
+                  <h3>Pendidikan<br>Berkualitas<br>Internasional</h3>
+                </div>
+
+                <div class="benefit">
+                  <div class="benefit-icon"><i class="bi bi-people"></i></div>
+                  <h3>Tenaga Pendidik<br>Profesional</h3>
+                </div>
+
+                <div class="benefit">
+                  <div class="benefit-icon"><i class="bi bi-globe2"></i></div>
+                  <h3>Lingkungan<br>Multikultural</h3>
+                </div>
+
+                <div class="benefit">
+                  <div class="benefit-icon"><i class="bi bi-star"></i></div>
+                  <h3>Pengembangan<br>Karakter & Potensi</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal-right d-2">
+            <div class="intro-visual">
+              <img
+                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1000&q=85"
+                alt="Siswa mengikuti pembelajaran di kelas"
+                loading="lazy">
+
+              <div class="quote-card">
+                <blockquote>"Education opens the door to a brighter future"</blockquote>
+                <small>— Stephen Perse Cambridge</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REGISTRATION STEPS ================= -->
+    <section class="registration-section" id="jalur">
+      <div class="content-container">
+        <div class="row g-3">
+
+          <div class="col-lg-9 reveal">
+            <div class="registration-heading">
+              <div class="section-kicker">Jalur Pendaftaran</div>
+              <h2 class="section-title">Langkah Mudah Mendaftar</h2>
+              <p class="section-description">
+                Proses pendaftaran PPDB di Stephen Perse Cambridge dirancang agar
+                mudah, transparan, dan nyaman untuk semua calon peserta didik.
+              </p>
+            </div>
+
+            <div class="steps-grid">
+
+              <article class="step-card reveal">
+                <div class="step-top">
+                  <span class="step-number">1</span>
+                  <span class="step-icon"><i class="bi bi-file-earmark-text"></i></span>
+                </div>
+                <h3>Isi Formulir Online</h3>
+                <p>Lengkapi data diri melalui formulir pendaftaran yang tersedia di website.</p>
+              </article>
+
+              <article class="step-card reveal">
+                <div class="step-top">
+                  <span class="step-number">2</span>
+                  <span class="step-icon"><i class="bi bi-cloud-arrow-up"></i></span>
+                </div>
+                <h3>Unggah Berkas</h3>
+                <p>Lampirkan dokumen yang dibutuhkan sesuai jenjang pendidikan.</p>
+              </article>
+
+              <article class="step-card reveal">
+                <div class="step-top">
+                  <span class="step-number">3</span>
+                  <span class="step-icon"><i class="bi bi-check2-square"></i></span>
+                </div>
+                <h3>Seleksi Administrasi</h3>
+                <p>Tim kami akan melakukan verifikasi berkas pendaftaran Anda.</p>
+              </article>
+
+              <article class="step-card reveal">
+                <div class="step-top">
+                  <span class="step-number">4</span>
+                  <span class="step-icon"><i class="bi bi-people"></i></span>
+                </div>
+                <h3>Tes & Wawancara</h3>
+                <p>Calon peserta didik mengikuti tes sesuai jenjang dan wawancara.</p>
+              </article>
+
+              <article class="step-card reveal">
+                <div class="step-top">
+                  <span class="step-number">5</span>
+                  <span class="step-icon"><i class="bi bi-megaphone"></i></span>
+                </div>
+                <h3>Pengumuman</h3>
+                <p>Hasil seleksi akan diumumkan melalui email dan akun pendaftar.</p>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="col-lg-3 reveal-right d-2" id="ppdb">
+            <aside class="registration-sidebar">
+              <h3>Daftar Sekarang</h3>
+              <p>
+                Jangan lewatkan kesempatan untuk menjadi bagian dari keluarga
+                besar Stephen Perse Cambridge.
+              </p>
+
+              <a href="#formulir" class="btn-gold">
+                Mulai Pendaftaran <i class="bi bi-arrow-right"></i>
+              </a>
+
+              <div class="sidebar-links">
+                <a href="#jadwal">
+                  <i class="bi bi-file-earmark-text"></i>
+                  Panduan Pendaftaran
+                </a>
+                <a href="#faq">
+                  <i class="bi bi-question-circle"></i>
+                  FAQ PPDB
+                </a>
+                <a href="#kontak">
+                  <i class="bi bi-person-lines-fill"></i>
+                  Kontak Kami
+                </a>
+              </div>
+            </aside>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCHEDULE ================= -->
+    <section class="schedule-section" id="jadwal">
+      <div class="content-container">
+        <div class="row g-3 align-items-stretch">
+
+          <div class="col-lg-4 reveal-left d-1">
+            <div class="schedule-intro">
+              <div class="section-kicker">Jadwal Penting</div>
+              <h2 class="section-title">Informasi Jadwal PPDB</h2>
+              <p class="section-description">
+                Berikut adalah jadwal penting yang perlu diperhatikan oleh
+                calon peserta didik dan orang tua/wali.
+              </p>
+              <a href="#jadwal-lengkap" class="btn-gold">
+                Lihat Semua Jadwal <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-8 reveal d-2">
+            <div class="row g-3">
+
+              <div class="col-md-4">
+                <article class="schedule-card">
+                  <i class="bi bi-calendar-event"></i>
+                  <span class="schedule-date">01 Okt 2026</span>
+                  <h3>Pendaftaran Dibuka</h3>
+                  <p>Pendaftaran dimulai melalui website resmi kami.</p>
+                </article>
+              </div>
+
+              <div class="col-md-4">
+                <article class="schedule-card">
+                  <i class="bi bi-calendar-event"></i>
+                  <span class="schedule-date">30 Nov 2026</span>
+                  <h3>Batas Akhir Pendaftaran</h3>
+                  <p>Pendaftaran ditutup pada tanggal yang telah ditentukan.</p>
+                </article>
+              </div>
+
+              <div class="col-md-4">
+                <article class="schedule-card">
+                  <i class="bi bi-calendar-event"></i>
+                  <span class="schedule-date">10 Des 2026</span>
+                  <h3>Pengumuman Hasil Seleksi</h3>
+                  <p>Hasil seleksi akan diumumkan melalui email dan akun pendaftar.</p>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL SCHEDULE -->
+    <section class="py-4 d-none" id="jadwal-lengkap">
+      <div class="content-container">
+        <h2 class="section-title">Jadwal Lengkap</h2>
+        <p class="section-description">
+          Silakan periksa jadwal resmi sekolah untuk memastikan tanggal pendaftaran,
+          seleksi, dan pengumuman terbaru.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= NEWS ================= -->
+    <section class="news-section" id="berita">
+      <div class="content-container">
+        <div class="row g-3 align-items-stretch">
+
+          <div class="col-lg-4 reveal-left d-1">
+            <div class="news-intro">
+              <div class="section-kicker">Berita Terbaru</div>
+              <h2 class="section-title">Informasi Seputar PPDB</h2>
+              <p class="section-description">
+                Dapatkan update terbaru mengenai proses pendaftaran,
+                kegiatan sekolah, dan informasi penting lainnya.
+              </p>
+              <a href="#berita-lainnya" class="btn-gold">
+                Lihat Semua Berita <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-8 reveal d-2">
+            <div class="row g-3">
+
+              <div class="col-md-4">
+                <article class="news-card">
+                  <img class="news-image"
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=85"
+                    alt="Siswa belajar bersama" loading="lazy">
+                  <div class="news-body">
+                    <span class="news-date">10 Mei 2026</span>
+                    <h3>Pendaftaran PPDB Gelombang 1 Resmi Dibuka</h3>
+                    <p>
+                      SMA Stephen Perse Cambridge resmi membuka pendaftaran
+                      PPDB untuk tahun ajaran 2026/2027.
+                    </p>
+                    <a href="#ppdb" class="news-link">Baca Selengkapnya →</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4">
+                <article class="news-card">
+                  <img class="news-image"
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=85"
+                    alt="Gedung kampus" loading="lazy">
+                  <div class="news-body">
+                    <span class="news-date">5 Mei 2026</span>
+                    <h3>Sosialisasi Program Beasiswa untuk Calon Peserta Didik</h3>
+                    <p>
+                      Sekolah mengadakan sesi sosialisasi mengenai program
+                      beasiswa dan peluang studi lanjutan.
+                    </p>
+                    <a href="#kontak" class="news-link">Baca Selengkapnya →</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-4">
+                <article class="news-card">
+                  <img class="news-image"
+                    src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=600&q=85"
+                    alt="Siswa melakukan kegiatan bersama" loading="lazy">
+                  <div class="news-body">
+                    <span class="news-date">28 April 2026</span>
+                    <h3>Kunjungan Edukasi ke Universitas Ternama</h3>
+                    <p>
+                      Siswa kelas XII melakukan kunjungan edukasi ke beberapa
+                      universitas untuk memperluas wawasan.
+                    </p>
+                    <a href="#berita-lainnya" class="news-link">Baca Selengkapnya →</a>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= CTA (KEN BURNS + PARALLAX) ================= -->
+  <section class="bottom-cta" id="formulir">
+
+    <!-- Layer luar: parallax -->
+    <div class="cta-parallax" id="ctaParallax">
+      <!-- Layer dalam: Ken Burns -->
+      <div class="cta-parallax-bg" id="ctaBg"></div>
+    </div>
+
+    <div class="cta-container">
+      <div class="reveal-left d-1">
+        <div class="cta-label">WUJUDKAN MASA DEPAN CERAH</div>
+        <h2>Daftar Sekarang dan Jadilah Bagian<br>dari Stephen Perse Cambridge</h2>
+      </div>
+      <a href="#kontak" class="btn-gold reveal-right d-2">
+        Daftar Sekarang <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER (dengan animasi lengkap) ================= -->
+<footer class="footer" id="kontak">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div class="reveal-left d-1">
+
+        <a href="#beranda" class="footer-brand">
+          <div class="footer-logo">✧</div>
+          <div>
+            <div class="footer-brand-name">STEPHEN PERSE</div>
+            <div class="footer-brand-sub">CAMBRIDGE</div>
+          </div>
+        </a>
+
+        <div class="footer-tagline">
+          Learning Today, Leading Tomorrow
+        </div>
+
+        <p class="footer-description">
+          Stephen Perse Cambridge adalah sekolah internasional yang berkomitmen
+          memberikan pendidikan berkualitas dengan nilai-nilai global.
+        </p>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div class="reveal d-2" id="bkk">
+        <div class="footer-divider">
+
+          <div class="footer-contact">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Jl. Pendidikan No. 129<br>Jakarta, Indonesia</span>
+          </div>
+
+          <div class="footer-contact">
+            <i class="bi bi-telephone-fill"></i>
+            <span>+62 21 1234 5678</span>
+          </div>
+
+          <div class="footer-contact">
+            <i class="bi bi-envelope-fill"></i>
+            <span>info@stephenperse.sch.id</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="reveal d-3">
+        <div class="footer-divider">
+
+          <div class="footer-title">Quick Links</div>
+
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Profil Singkat</a></li>
+            <li><a href="#tentang">Visi &amp; Misi</a></li>
+            <li><a href="#tentang">Struktur Organisasi</a></li>
+            <li><a href="#tentang">Galeri</a></li>
+            <li><a href="#tentang">Jurusan</a></li>
+            <li><a href="#tentang">Fasilitas</a></li>
+            <li><a href="#berita">Berita</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="reveal-right d-4">
+        <div class="footer-divider">
+
+          <div class="footer-title">Ikuti Kami</div>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom reveal d-5">
+
+      <div class="copyright">
+        © <span id="currentYear">2026</span> Stephen Perse Cambridge. All rights reserved.
+      </div>
+
+      <div class="footer-bottom-links">
+        <span>Excellence</span>
+        <span>|</span>
+        <span>Character</span>
+        <span>|</span>
+        <span>Global Perspective</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= FAQ MODAL ================= -->
+<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="faqModalTitle">FAQ PPDB</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="fs-6 fw-bold">Bagaimana cara mendaftar?</h3>
+        <p>Ikuti langkah pendaftaran dan siapkan dokumen sesuai persyaratan sekolah.</p>
+        <h3 class="fs-6 fw-bold">Bagaimana mengetahui hasil seleksi?</h3>
+        <p>Informasi hasil seleksi dapat disampaikan melalui kanal resmi sekolah.</p>
+        <p class="text-secondary small mb-0">
+          Silakan sesuaikan jawaban FAQ dengan ketentuan resmi sekolah.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BACK TO TOP ================= -->
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- ================= BOOTSTRAP JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ==========================================
+     0. REDUCED MOTION CHECK
+  ========================================== */
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ==========================================
+     1. TAHUN OTOMATIS
+  ========================================== */
+  const yearEl = document.getElementById("currentYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ==========================================
+     2. NAVBAR SCROLLED STATE
+  ========================================== */
+  const mainNavbar = document.getElementById("mainNavbar");
+
+  /* ==========================================
+     3. SCROLL REVEAL (dari codingan 1)
+  ========================================== */
+  const revealEls = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add("active"));
+  }
+
+  /* ==========================================
+     4. PARALLAX + NAVBAR + BACK TO TOP
+  ========================================== */
+  const backToTop = document.getElementById("backToTop");
+  const hero = document.querySelector(".hero");
+  const heroParallax = document.getElementById("heroParallax");
+  const heroContent = document.getElementById("heroContent");
+  const ctaSection = document.getElementById("formulir");
+  const ctaParallax = document.getElementById("ctaParallax");
+
+  let ticking = false;
+
+  function updateOnScroll() {
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+
+    /* Navbar & Back To Top */
+    if (mainNavbar) mainNavbar.classList.toggle("scrolled", y > 30);
+    if (backToTop) backToTop.classList.toggle("show", y > 400);
+
+    if (reduceMotion) {
+      ticking = false;
+      return;
+    }
+
+    /* HERO PARALLAX (layer luar) */
+    if (heroParallax && hero) {
+      const heroRect = hero.getBoundingClientRect();
+      if (heroRect.bottom > 0) {
+        const offset = y * 0.4;
+        heroParallax.style.transform = `translateY(${offset}px)`;
+      }
+    }
+
+    /* HERO CONTENT PARALLAX */
+    if (heroContent && y < vh) {
+      heroContent.style.transform = `translateY(${y * 0.5}px)`;
+      heroContent.style.opacity = Math.max(0, 1 - y / (vh * 0.75));
+    }
+
+    /* CTA PARALLAX (layer luar) */
+    if (ctaParallax && ctaSection) {
+      const ctaRect = ctaSection.getBoundingClientRect();
+      if (ctaRect.top < vh && ctaRect.bottom > 0) {
+        const progress = (vh - ctaRect.top) / (vh + ctaRect.height);
+        ctaParallax.style.transform =
+          `translateY(${(progress - 0.5) * -50}px)`;
+      }
+    }
+
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateOnScroll);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateOnScroll, { passive: true });
+  updateOnScroll();
+
+  /* BACK TO TOP CLICK */
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* ==========================================
+     5. SEARCH OVERLAY
+  ========================================== */
+  const searchOverlay = document.getElementById("searchOverlay");
+  const searchInput = document.getElementById("searchInput");
+  const openSearch = document.getElementById("openSearch");
+  const closeSearch = document.getElementById("closeSearch");
+
+  function showSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add("show");
+    setTimeout(() => { if (searchInput) searchInput.focus(); }, 100);
+  }
+
+  function closeSearchOverlay() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove("show");
+    if (searchInput) searchInput.value = "";
+    filterPage("");
+  }
+
+  if (openSearch) openSearch.addEventListener("click", showSearch);
+  if (closeSearch) closeSearch.addEventListener("click", closeSearchOverlay);
+
+  if (searchOverlay) {
+    searchOverlay.addEventListener("click", event => {
+      if (event.target === searchOverlay) {
+        closeSearchOverlay();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeSearchOverlay();
+    }
+  });
+
+  /* PENCARIAN SEDERHANA */
+  function filterPage(keyword) {
+    const query = keyword.trim().toLowerCase();
+    const searchableCards = document.querySelectorAll(
+      ".step-card, .schedule-card, .news-card"
+    );
+
+    searchableCards.forEach(card => {
+      const match = card.textContent.toLowerCase().includes(query);
+      card.style.display = match ? "" : "none";
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", event => {
+      filterPage(event.target.value);
+    });
+
+    searchInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        searchOverlay.classList.remove("show");
+        const beritaEl = document.getElementById("berita");
+        if (beritaEl) {
+          beritaEl.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  }
+
+  /* ==========================================
+     6. FAQ MODAL
+  ========================================== */
+  document.querySelectorAll('a[href="#faq"]').forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      const faqModalEl = document.getElementById("faqModal");
+      if (faqModalEl && window.bootstrap) {
+        bootstrap.Modal.getOrCreateInstance(faqModalEl).show();
+      }
+    });
+  });
+
+  /* ==========================================
+     7. SMOOTH SCROLL ANCHOR (dari codingan 1)
+  ========================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (!targetId || targetId === "#" || targetId.length < 2) return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+
+        const navbarCollapse = document.getElementById("spcNavbarMenu");
+        if (navbarCollapse && navbarCollapse.classList.contains("show") && window.bootstrap) {
+          bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        }
+      }
+    });
+  });
+
+  /* ==========================================
+     8. CLOSE NAVBAR MOBILE
+  ========================================== */
+  document.querySelectorAll("#mainNavbar .nav-link, #mainNavbar .dropdown-item")
+    .forEach(link => {
+      link.addEventListener("click", () => {
+        const navbarCollapse = document.getElementById("spcNavbarMenu");
+        if (navbarCollapse && navbarCollapse.classList.contains("show") && window.bootstrap) {
+          bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        }
+      });
+    });
+
+});
+</script>
+
+</body>
+</html>
